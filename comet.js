@@ -22,6 +22,6 @@ class Comet {
 
   move() {
     this.posX -= this.velX
-    this.postY += 10 *Math.sqrt(2)
+    this.postY += 40 *Math.sqrt(2)
   }
 }

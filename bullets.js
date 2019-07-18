@@ -8,25 +8,26 @@ class Bullet {
     this.radius = 5;
     this.velX = 10;
     this.velY = 1;
-
+    this.width = 30
+    this.height = 5
     this.gravity = 0.25;
   }
 
   draw() {        //DIbujamos las balas con un arco
     this.ctx.beginPath()
-    this.ctx.fillStyle = "red";
-    this.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
+    this.ctx.fillStyle = "yellow";
+ //   this.ctx.arc(this.posX, this.posY, this.radius, 0, Math.PI * 2);
+    this.ctx.fillRect(this.posX + 30, this.posY + 20, this.width, this.height)
     this.ctx.fill();
     this.ctx.closePath();
   }
 
   move() {
     this.posX += this.velX        
-    this.posY += this.velY        //Añadimos velY linear para que caigan
-    this.velY += this.gravity     //Modificamos la velY para generar el efecto gravedad
+ //  this.posY += this.velY        //Añadimos velY linear para que caigan
+ //  this.velY += this.gravity     //Modificamos la velY para generar el efecto gravedad
 
-    if(this.posY >= this.playerHeight + this.posY0){
-      this.velY *= -1   //Si llegan al suelo invertimos su velocidad para que "reboten"
+ //  if(this.posY >= this.playerHeight + this.posY0){
+  //   this.velY *= -1   //Si llegan al suelo invertimos su velocidad para que "reboten"
     }
   }
-}

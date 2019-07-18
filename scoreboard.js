@@ -4,11 +4,14 @@ const ScoreBoard = {
 
   init: function (ctx) {
     this.ctx = ctx
-    this.ctx.font = "50px Montserrat"
+    this.ctx.font = "50px Barriecito"
   },
   
   update: function (score) {
     this.ctx.fillStyle = "red";
     this.ctx.fillText("Aguas de Marte " + Math.floor(score) + " millones de litros " , 100, 100);
+    
+    }
+ 
   }
-};
+

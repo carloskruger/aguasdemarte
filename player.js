@@ -17,7 +17,9 @@ class Player {
     this.posY = this.gameHeight*0.50 - this.height
 
     this.velY = 1
-       //Frame actual menos 1, lo usaremos para recortar la imagen en drawImage
+    this.shooting_sound = new Audio(),
+    this.shooting_sound.src = "./sound/Shotgun_Blast-Jim_Rogers-1914772763.mp3"
+     //Frame actual menos 1, lo usaremos para recortar la imagen en drawImage
 
     this.keys = keys
 
@@ -25,6 +27,9 @@ class Player {
 
     this.setListeners()       //Llamamos al listener para que desde el primer momento el jugador responda.
   }
+
+
+
   draw() {
     this.ctx.drawImage(
       this.image, 
@@ -115,6 +120,7 @@ class Player {
    //       }
           break;
         case this.keys.SPACE:
+        
           this.shoot()                //Funcion de disparo
           break;
 
@@ -123,9 +129,10 @@ class Player {
   }
 
   shoot() {
-
+  
+    this.shooting_sound.play()
     //Instanciamos nuevas balas
     this.bullets.push(new Bullet(this.ctx, this.posX, this.posY, this.posY0, this.height))
-    
+ //   this.shooting_sound.pause()
   }
 }

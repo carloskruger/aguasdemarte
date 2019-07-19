@@ -40,6 +40,9 @@ const Game = {
     
     this.explosion_sound = new Audio()
     this.explosion_sound.src = "./sound/Bomb-SoundBible.com-891110113.mp3" 
+
+    this.comet_sound = new Audio()
+    this.comet_sound.src = "./sound/Comet-SoundBible.com-1256431940.mp3"
    
     //this.explosion_sound.volume = 0.12
    
@@ -147,6 +150,7 @@ const Game = {
     if(this.framesCounter%250==0) {        //Generamos obstaculos cada 70 frames.
    //   console.log(this.comets)
       this.comets.push(new Comet(this.ctx, this.canvas.width, this.player.posY0, this.player.height)) //pusheamos nuevos obstaculos
+      this.comet_sound.play() 
     }
   },
 

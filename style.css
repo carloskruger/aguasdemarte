@@ -1,0 +1,19 @@
+.out{
+    display: none;
+   
+    
+    
+}
+
+div {
+ /*   background-image: url("./img/desert-drought-dehydrated-clay-soil-60013.jpeg") no-repeat center cover;
+ */
+ background-image: url(img/desert-drought-dehydrated-clay-soil-60013.jpeg);
+    padding: 245px 0;
+    text-align: center;
+    /* background-color: orange; */
+    background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}

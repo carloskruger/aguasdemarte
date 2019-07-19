@@ -74,7 +74,8 @@ const Game = {
       this.clearWater()  
       this.clearComet() 
       this.clearAscending()   
-      this.isCollision()    // Comprobamos colisiones
+      this.isCollision() 
+      this.isCollisionRed()    // Comprobamos colisiones
       this.isWaterFound()                // Comprobamos si encontramos agua
       this.isObstacleHit()
       this.hasPlayerWon()
@@ -215,6 +216,9 @@ const Game = {
      //     this.music.pause()
         }
       })
+    },
+
+    isCollisionRed: function() { 
 
         this.redball.some( red => {
 
@@ -224,8 +228,8 @@ const Game = {
           &&this.player.posX<= red.posX+red.width&&this.player.posY <= red.posY + red.height) {
           
             //fin del juego, detenemos intervalo
-  
-            this.gameOver()
+              this.explosion_sound.play()
+              this.gameOver()
       //      this.explosion_sound.play()
     //        this.music.pause()
      //       this.explosion_sound.pause()
